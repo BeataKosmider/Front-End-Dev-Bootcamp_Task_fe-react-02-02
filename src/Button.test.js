@@ -5,24 +5,26 @@ import Adapter from 'enzyme-adapter-react-16';
 
 Enzyme.configure({ adapter: new Adapter() });
 
+const onClick = jest.fn();
+
 const props = {
-    label: 'Click me!',
-    onBtnClick: jest.fn()
+  label: 'Click me!',
+  onBtnClick: onClick,
 };
 
 describe('Button tests', () => {
-    it('Dodano poprawnie komponent przycisku', () => {
-      const wrapper = shallow(<Button {...props} />);
-      expect(wrapper.find('button').exists()).toBe(true);
-    });
-    it('Dodano parametr potrzebny do przekazania napisu w buttonie (label)', () => {
-      const wrapper = render(<Button {...props} />);
-      expect(wrapper.text()).toMatch(props.label);
-    });
-    it('Dodano parametr funkcji callback odpalanej na kliku w button (onBtnClick)', () => {
-        const onClick = jest.fn()
-        const wrapper = shallow(<Button {...props} onBtnClick={onClick} />);
-        wrapper.simulate('click')
-        expect(onClick.mock.calls.length).toBe(1);
-    });
+  it('Dodano poprawnie komponent Button', () => {
+    const wrapper = shallow(<Button {...props} />);
+    expect(wrapper.find('button').exists()).toBe(true);
   });
+  it('Dodano prop potrzebny do przekazania napisu w buttonie (label)', () => {
+    const wrapper = render(<Button {...props} />);
+    expect(wrapper.text()).toMatch(props.label);
+  });
+  it('Dodano prop funkcji callback odpalanej na kliku w button (onBtnClick)', () => {
+    const wrapper = shallow(<Button {...props} />);
+    wrapper.simulate('click');
+
+    expect(onClick).toHaveBeenCalled();
+  });
+});
