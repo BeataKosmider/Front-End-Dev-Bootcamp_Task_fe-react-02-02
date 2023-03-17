@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="3" failures="0" time="0.509">
+  <testsuite name="Button tests" errors="0" failures="0" skipped="0" timestamp="2023-03-17T10:30:40" time="0.498" tests="3">
+    <testcase classname="Button tests" name="Dodano poprawnie komponent przycisku" time="0">
+    </testcase>
+    <testcase classname="Button tests" name="Dodano parametr potrzebny do przekazania napisu w buttonie (label)" time="0.001">
+    </testcase>
+    <testcase classname="Button tests" name="Dodano parametr funkcji callback odpalanej na kliku w button (onBtnClick)" time="0.001">
+    </testcase>
+  </testsuite>
+</testsuites>
