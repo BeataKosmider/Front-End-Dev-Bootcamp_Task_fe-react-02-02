@@ -1,3 +1,5 @@
+Task performed during Front-End Developer Bootcamp
+
 Utwórz komponent Button, który będzie przyjmować 2 propsy:
 
 onBtnClick - funkcja callbackowa, która console.log'uje Event Target. Ta funkcja powinna się wywołać po kliknięciu na <button> (użyj eventu onClick).
